@@ -1,2 +1,2 @@
 # scada-documentation
-repopsitory of SCADA knowledge
+repository of SCADA knowledge
