@@ -1,6 +1,4 @@
-#########################
-Credentials for Equipment
-#########################
+# Credentials for Equipment
 
 User logins for applications hosted on different hardware will generally follow the same scheme. Except for Ignition, most devices make use of individual user accounts instead of shared accounts. Still, credentials are created with the following pattern:
 
