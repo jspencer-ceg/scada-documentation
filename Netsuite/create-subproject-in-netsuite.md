@@ -1,6 +1,4 @@
-###############################
-Create a Subproject in NetSuite
-###############################
+# Create a Subproject in NetSuite
 
 1. Log into NetSuite.
 
