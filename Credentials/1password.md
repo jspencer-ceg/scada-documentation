@@ -1,7 +1,4 @@
-####################
-1Password Guidelines
-####################
-
+# 1Password Guide
 1Password is a tool that we use to store credentials. The credentials can be for devices on projects and services that we use. 1Password keeps the passwords secure and accessible to members of the team from wherever they are. Each team member who has an account with CEG's 1Password account also receives a personal 1Password account. You can store your personal passwords to your personal 1Password account and store CEG-related passwords to the CEG 1Password account.
 
 An indivdual record in 1Password is called an item. Items can be logins, identities, SSH keys, server information, software licenses, or anything else that needs to be stored securely.
