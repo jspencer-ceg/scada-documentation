@@ -1,8 +1,6 @@
-################
-Beckwith M-2001D
-################
+# Beckwith M-2001D
 
-Step 1. Install software.
+## Step 1. Install software.
 =========================
 
 TapTalk software is used to configure the M-2001D.
