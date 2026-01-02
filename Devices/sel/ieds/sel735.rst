@@ -1,0 +1,215 @@
+################
+SEL-735 Settings
+################
+
+.. todo::
+  What is this device and when are these steps completed?
+
+**************
+Settings Pages
+**************
+
+General > Identifier and Scaling
+================================
+
++--------------+--------------------------+---------+
+| Setting Name | Setting Description      | Setting |
++==============+==========================+=========+
+| VOLT_SCA     | Voltage Scaling          | KILO    |
++--------------+--------------------------+---------+
+| POWR_SCA     | Power and Demand Scaling | MEGA    |
++--------------+--------------------------+---------+
+| ENRG_SCA     | Energy Scaling           | KILO    |
++--------------+--------------------------+---------+
+
+General > Global
+================
+
++--------------+----------------------------------+--------------------------------------------+
+| Setting Name | Setting Description              | Setting                                    |
++==============+==================================+============================================+
+| DISPLAY_GI   | Settings to Display              | Advanced                                   |
++--------------+----------------------------------+--------------------------------------------+
+| DATE_F       | Date Format                      | MDY                                        |
++--------------+----------------------------------+--------------------------------------------+
+| TSTYPE       | Synchrophasor Time Source Type   | IEEE                                       |
++--------------+----------------------------------+--------------------------------------------+
+| UTC_OFF      | Offset from UTC (hours)          | *Set according to the project's time zone* |
++--------------+----------------------------------+--------------------------------------------+
+| TIME_CHG     | Time Change Flag Threshold (sec) | 5                                          |
++--------------+----------------------------------+--------------------------------------------+
+
+Metering > Configurable Registers
+=================================
+
+Scroll through the list of configurable registers to find the following two registers, and edit their settings to match those listed below.
+
+Register CFG0011
+----------------
+
+   :Analog Quantity: **W3_UC**
+   :Alias: **WATTS UNCOMP 3PH**
+   :Units: **MW**
+   :Decimal Places: **3**
+   :Scale: Select :guilabel:`Mega` and :guilabel:`Primary`
+
+
+Register CFG0013
+----------------
+
+   :Analog Quantity: **QC_UC**
+   :Alias: **VARS UNCOMP 3PH**
+   :Units: **Mvar**
+   :Decimal Places: **3**
+   :Scale: Select :guilabel:`Mega` and :guilabel:`Primary`
+
+Communication > Ports > Port F
+==============================
+
+Many of these settings are at their default values, but listed here anyways to ensure uniformity.
+
++--------------+-----------------------------+----------+
+| Setting Name | Setting Description         | Setting  |
++==============+=============================+==========+
+| DISPLAY      | Settings to Display         | Advanced |
++--------------+-----------------------------+----------+
+| EPORT        | Enable Port                 | Y        |
++--------------+-----------------------------+----------+
+| MAXACC       | Maximum Access Level        | 2        |
++--------------+-----------------------------+----------+
+| PROTO        | Protocol                    | SEL      |
++--------------+-----------------------------+----------+
+| SPEED        | Baud Rate                   | 19200    |
++--------------+-----------------------------+----------+
+| BITS         | Data Bits                   | 8        |
++--------------+-----------------------------+----------+
+| PARITY       | Parity                      | N        |
++--------------+-----------------------------+----------+
+| STOP         | Stop Bits                   | 1        |
++--------------+-----------------------------+----------+
+| T_OUT        | Minutes to Port Time-Out    | 30       |
++--------------+-----------------------------+----------+
+| AUTO         | Send Auto Messages to Port  | N        |
++--------------+-----------------------------+----------+
+| RTSCTS       | Enable Hardware Handshaking | N        |
++--------------+-----------------------------+----------+
+| FASTOP       | Fast Operate Enable         | N        |
++--------------+-----------------------------+----------+
+
+Communication > Ports > Port 1 (Ethernet)
+=========================================
+
++--------------+---------------------------------------+--------------------------------------------------------------+
+| Setting Name | Setting Description                   | Setting                                                      |
++==============+=======================================+==============================================================+
+| EPORT        | Enable Port                           | Y                                                            |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| ETELNET      | Enable Telnet                         | Y                                                            |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| MAXACC       | Maximum Access Level                  | 2                                                            |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| EMODBUS      | Enable Modbus                         | N                                                            |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| ETCPKA       | Enable TCP Keep-Alive                 | N                                                            |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| EFTPSERV     | Enable FTP                            | Y                                                            |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| ESNTP        | Enable SNTP                           | UNICAST                                                      |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| EDNP         | Enable DNP Sessions (0-5)             | 1                                                            |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| EPMIP        | Enable PMU Sessions                   | 0                                                            |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| TPORT        | Primary Telnet Port                   | 23                                                           |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| TIDLE        | Primary Telnet Port Timeout (minutes) | 15                                                           |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| IPADDR       | IP Address                            | *Set according to the IP address schedule*                   |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| SUBNETM      | Subnet Mask                           | *Set according to the IP address schedule*                   |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| DEFRTR       | Default Router (Gateway)              | *Set according to the IP address schedule*                   |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| FTPUSER      | FTP User Name                         | FTPUSER                                                      |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| FTPCBAN      | FTP Connect Banner                    | FTP SERVER                                                   |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| FTPIDLE      | FTP Idle Timeout (min)                | 5                                                            |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| SNTPPSIP     | Primary Server IP Address             | *Set to the primary NTP clock, typically the SEL-2488*       |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| SNTPBSIP     | Backup Server IP Address              | *Set to the backup NTP clock, typically the substation RTAC* |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| SNTPPORT     | SNTP IP (Local) Port Number           | 123                                                          |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| SNTPRATE     | SNTP Update Rate (sec)                | 60                                                           |
++--------------+---------------------------------------+--------------------------------------------------------------+
+| SNTPTO       | SNTP Timeout (sec)                    | 5                                                            |
++--------------+---------------------------------------+--------------------------------------------------------------+
+
+Communication > Ports > Port 1 (Ethernet) > DNP Session Settings
+================================================================
+
+.. .. rubric:: The quick brown fox jumps over the lazy dog.
+
++--------------+----------------------+----------------------------------+
+| Setting Name | Setting Description  | Setting                          |
++==============+======================+==================================+
+| DISPLAY_P1   | Settings to Display  | Advanced                         |
++--------------+----------------------+----------------------------------+
+| DNPNUM       | DNP TCP and UDP Port | 20000                            |
++--------------+----------------------+----------------------------------+
+| DNPADR       | DNP Address          | 1                                |
++--------------+----------------------+----------------------------------+
+| DNPMAP       | DNP Session Map      | 1                                |
++--------------+----------------------+----------------------------------+
+| DNPTR        | Transport Protocol   | TCP                              |
++--------------+----------------------+----------------------------------+
+| DNPIP        | Master IP Address    | *Set to the IP address of RTU-1* |
++--------------+----------------------+----------------------------------+
+| DNPUDP       | UDP Response Port    | 20000                            |
++--------------+----------------------+----------------------------------+
+
+*****************************
+DNP Default Variation Options
+*****************************
+
+The default variation of Analog Inputs can be changed using the ``DNP DVAR`` commands below. These changes affect all DNP sessions on the meter.
+
+- :samp:`DNP DVAR {VAR_NUM}` allows the default variation for Object 30 queries set to 1 through 5, as defined in the table below. Replace :samp:`{VAR_NUM}` with the variation number. This requires Access Level 2 access.
+- :samp:`DNP DVAR C` (Clear) resets the Object 30 default variation to 4, and Object 32 variation to 2. This requires Access Level 2 access.
+- :samp:`DNP DVAR S` (Show) returns the current variation. This requires Access Level 1 access.
+- :samp:`DNP DVAR H` (Help) returns the command syntax. This requires Access Level 1 access.
+
+The following table lists the Object 32 default variation that is linked to each Object 30 default variation.
+
++-------------------------------------------------+--------------------------------------------------------+
+| Object 30 Variation                             | Object 32 Variation                                    |
++=================================================+========================================================+
+| 1 (32-bit with flag)                            | 3 (32-bit with time)                                   |
++-------------------------------------------------+--------------------------------------------------------+
+| 2 (16-bit with flag)                            | 4 (16-bit with time)                                   |
++-------------------------------------------------+--------------------------------------------------------+
+| 3 (32-bit without flag                          | 1 (32-bit without time)                                |
++-------------------------------------------------+--------------------------------------------------------+
+| 4 (16-bit without flag)                         | 2 (16-bit without time)                                |
++-------------------------------------------------+--------------------------------------------------------+
+| 5 (short floating point analog input with flag) | 7 (short floating point analog change event with time) |
++-------------------------------------------------+--------------------------------------------------------+
+
+The standard for CEG projects is to use Object 30 variation 1. Use the :samp:`DNP DVAR 1` command to set this in the meter.
+
+Procedure
+=========
+
+1. Open AcSELerator QuickSet.
+#. Select :menuselection:`Communications --> Parameters` or :kbd:`Ctrl+R` to open :guilabel:`Communication Parameters`.
+#. For :guilabel:`Active Connection Type`, choose :guilabel:`Network`.
+#. Set the :guilabel:`Host IP Address` of the meter.
+#. Select :guilabel:`OK`.
+#. Select :menuselection:`Communications --> Terminal` or :kbd:`Ctrl+T` to open a terminal window.
+#. Select :kbd:`Enter`. The terminal should show an ``=`` prompt.
+#. Enter :samp:`ACC` to enter Access Level 1. The default password is ``OTTER``.
+#. Enter :samp:`2AC` to enter Access Level 2. The default password is ``TAIL``.
+#. Enter :samp:`DNP DVAR 1` to change the object 30 default variation to 1. Enter :samp:`y` to confirm the change.
+#. Enter :samp:`QUI` to return to Access Level 0.

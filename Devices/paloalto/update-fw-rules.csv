@@ -1,0 +1,6 @@
+﻿Name,"| Source 
+| Zone",Source Address,Destination Zone,Destination Address,Applications,Service/URL Category,Action
+Firewall to Internet - ICMP,``Management``,"| *Select the address group for the*
+| *firewall management interfaces*",``Internet``,Any,"| ``icmp``
+| ``ping``
+| ``traceroute``",application-default,Allow
